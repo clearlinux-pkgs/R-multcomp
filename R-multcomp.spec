@@ -4,9 +4,9 @@
 #
 Name     : R-multcomp
 Version  : 1.4
-Release  : 4
-URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-5.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-5.tar.gz
+Release  : 5
+URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-6.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-6.tar.gz
 Summary  : Simultaneous Inference in General Parametric Models
 Group    : Development/Tools
 License  : GPL-2.0
@@ -27,11 +27,11 @@ No detailed description available
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484544768
+export SOURCE_DATE_EPOCH=1487769159
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1484544768
+export SOURCE_DATE_EPOCH=1487769159
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
