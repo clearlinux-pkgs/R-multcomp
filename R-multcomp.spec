@@ -4,17 +4,19 @@
 #
 Name     : R-multcomp
 Version  : 1.4.6
-Release  : 9
+Release  : 10
 URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-6.tar.gz
 Summary  : Simultaneous Inference in General Parametric Models
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-lme4
+Requires: R-lmtest
 Requires: R-mvtnorm
 Requires: R-sandwich
 BuildRequires : R-TH.data
 BuildRequires : R-lme4
+BuildRequires : R-lmtest
 BuildRequires : R-mvtnorm
 BuildRequires : R-sandwich
 BuildRequires : clr-R-helpers
@@ -26,12 +28,15 @@ No detailed description available
 %setup -q -c -n multcomp
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489246725
+export SOURCE_DATE_EPOCH=1492802166
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1489246725
+export SOURCE_DATE_EPOCH=1492802166
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -47,7 +52,7 @@ R CMD INSTALL --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
 R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library multcomp
 
@@ -65,6 +70,7 @@ R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/lib
 /usr/lib64/R/library/multcomp/Meta/Rd.rds
 /usr/lib64/R/library/multcomp/Meta/data.rds
 /usr/lib64/R/library/multcomp/Meta/demo.rds
+/usr/lib64/R/library/multcomp/Meta/features.rds
 /usr/lib64/R/library/multcomp/Meta/hsearch.rds
 /usr/lib64/R/library/multcomp/Meta/links.rds
 /usr/lib64/R/library/multcomp/Meta/nsInfo.rds
