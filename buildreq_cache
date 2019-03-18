@@ -1,6 +1,8 @@
 1.4.10
 R-lme4
 R-lmtest
+R-minqa
 R-mvtnorm
+R-nloptr
 R-sandwich
 R-zoo

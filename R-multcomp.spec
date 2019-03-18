@@ -4,19 +4,20 @@
 #
 Name     : R-multcomp
 Version  : 1.4.10
-Release  : 39
+Release  : 40
 URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-10.tar.gz
 Summary  : Simultaneous Inference in General Parametric Models
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-lme4
-Requires: R-lmtest
-Requires: R-zoo
+Requires: R-minqa
+Requires: R-nloptr
 BuildRequires : R-TH.data
 BuildRequires : R-lme4
 BuildRequires : R-lmtest
+BuildRequires : R-minqa
 BuildRequires : R-mvtnorm
+BuildRequires : R-nloptr
 BuildRequires : R-sandwich
 BuildRequires : R-zoo
 BuildRequires : buildreq-R
@@ -36,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552074003
+export SOURCE_DATE_EPOCH=1552879875
 
 %install
-export SOURCE_DATE_EPOCH=1552074003
+export SOURCE_DATE_EPOCH=1552879875
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -75,8 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library multcomp|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  multcomp || :
 
 
 %files
@@ -134,3 +134,21 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/multcomp/html/R.css
 /usr/lib64/R/library/multcomp/multcomp_VA.R
 /usr/lib64/R/library/multcomp/multcomp_coxme.R
+/usr/lib64/R/library/multcomp/tests/Examples/multcomp-Ex.Rout.save
+/usr/lib64/R/library/multcomp/tests/angina.rda
+/usr/lib64/R/library/multcomp/tests/bugfix.R
+/usr/lib64/R/library/multcomp/tests/bugfix.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-Tukey.R
+/usr/lib64/R/library/multcomp/tests/regtest-Tukey.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-anova.R
+/usr/lib64/R/library/multcomp/tests/regtest-anova.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-interface-extended.R
+/usr/lib64/R/library/multcomp/tests/regtest-interface-extended.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-interface.R
+/usr/lib64/R/library/multcomp/tests/regtest-interface.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-lme.R
+/usr/lib64/R/library/multcomp/tests/regtest-lme.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-mmm.R
+/usr/lib64/R/library/multcomp/tests/regtest-mmm.Rout.save
+/usr/lib64/R/library/multcomp/tests/regtest-survival.R
+/usr/lib64/R/library/multcomp/tests/regtest-survival.Rout.save
