@@ -4,7 +4,7 @@
 #
 Name     : R-multcomp
 Version  : 1.4.10
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-10.tar.gz
 Summary  : Simultaneous Inference in General Parametric Models
