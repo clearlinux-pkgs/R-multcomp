@@ -4,14 +4,12 @@
 #
 Name     : R-multcomp
 Version  : 1.4.10
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-10.tar.gz
 Summary  : Simultaneous Inference in General Parametric Models
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-minqa
-Requires: R-nloptr
 BuildRequires : R-TH.data
 BuildRequires : R-lme4
 BuildRequires : R-lmtest
@@ -37,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552879875
+export SOURCE_DATE_EPOCH=1552883075
 
 %install
-export SOURCE_DATE_EPOCH=1552879875
+export SOURCE_DATE_EPOCH=1552883075
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
