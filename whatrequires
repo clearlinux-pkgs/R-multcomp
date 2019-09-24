@@ -1,7 +1,8 @@
 # This file contains recursive sources that require this package
 R-coin
 R-drc
+R-emmeans
 R-ggplot2
-R-libcoin
+R-haplo.stats
 R-psychotools
 R-rms
