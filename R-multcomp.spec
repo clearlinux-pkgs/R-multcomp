@@ -4,7 +4,7 @@
 #
 Name     : R-multcomp
 Version  : 1.4.13
-Release  : 51
+Release  : 52
 URL      : https://cran.r-project.org/src/contrib/multcomp_1.4-13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/multcomp_1.4-13.tar.gz
 Summary  : Simultaneous Inference in General Parametric Models
@@ -12,10 +12,12 @@ Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-TH.data
 Requires: R-lme4
+Requires: R-lmtest
 Requires: R-mvtnorm
 Requires: R-sandwich
 BuildRequires : R-TH.data
 BuildRequires : R-lme4
+BuildRequires : R-lmtest
 BuildRequires : R-mvtnorm
 BuildRequires : R-sandwich
 BuildRequires : buildreq-R
@@ -29,21 +31,22 @@ for general linear hypotheses in parametric models, including
 
 %prep
 %setup -q -c -n multcomp
+cd %{_builddir}/multcomp
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1586357482
+export SOURCE_DATE_EPOCH=1589748268
 
 %install
-export SOURCE_DATE_EPOCH=1586357482
+export SOURCE_DATE_EPOCH=1589748268
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
